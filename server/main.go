@@ -10,12 +10,12 @@ import (
 func main() {
 	dat, err := env.LoadENV()
 	if err != nil {
-		log.Fatalln("Cannot load env")
+		log.Panicln("Cannot load env")
 	}
 
 	err = db.Connect(dat)
 	if err != nil {
-		log.Fatalln("Cannot connect to PostgreSQL")
+		log.Panicln("Cannot connect to PostgreSQL")
 	}
 	defer db.Disconnect()
 
