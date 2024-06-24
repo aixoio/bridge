@@ -51,12 +51,18 @@ func loadENVFromSystem() (Env, bool) {
 		return Env{}, false
 	}
 
+	port, exists := os.LookupEnv("PORT")
+	if !exists {
+		return Env{}, false
+	}
+
 	return Env{
 		Pg_host: pg_host,
 		Pg_port: pg_port,
 		Pg_user: pg_user,
 		Pg_pwd:  pg_pwd,
 		Pg_db:   pg_db,
+		Port:    port,
 	}, true
 }
 
@@ -72,5 +78,6 @@ func loadENVFromFile() (Env, error) {
 		Pg_user: os.Getenv("PG_USER"),
 		Pg_pwd:  os.Getenv("PG_PWD"),
 		Pg_db:   os.Getenv("PG_DB"),
+		Port:    os.Getenv("PORT"),
 	}, nil
 }

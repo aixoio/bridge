@@ -6,4 +6,5 @@ type Env struct {
 	Pg_user string
 	Pg_pwd  string
 	Pg_db   string
+	Port    string
 }
