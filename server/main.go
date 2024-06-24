@@ -19,6 +19,4 @@ func main() {
 	}
 	defer db.Disconnect()
 
-	db.SignUpUser("test-user", "test-pwd")
-
 }
