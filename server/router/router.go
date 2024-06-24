@@ -4,14 +4,13 @@ import (
 	"net/http"
 
 	"github.com/aixoio/bridge/server/env"
+	"github.com/aixoio/bridge/server/router/handlers"
 )
 
 func StartServer(dat env.Env) {
 	r := http.NewServeMux()
 
-	r.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello world!"))
-	})
+	r.HandleFunc("POST /api/user/signup", handlers.Signup)
 
 	server := http.Server{
 		Addr:    ":" + dat.Port,
