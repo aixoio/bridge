@@ -19,7 +19,7 @@ CREATE TABLE users (
 -- Add indexes to the users table
 
 CREATE INDEX users_id_idx ON users(id);
-CREATE INDEX user_username_idx ON users(username);
+CREATE INDEX users_username_idx ON users(username);
 
 -- Create transactions table
 
