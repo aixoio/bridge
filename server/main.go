@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"log"
 
+	"github.com/aixoio/bridge/server/db"
 	"github.com/aixoio/bridge/server/env"
 )
 
@@ -13,5 +13,10 @@ func main() {
 		log.Fatalln("Cannot load env")
 	}
 
-	fmt.Println(dat)
+	err = db.Connect(dat)
+	if err != nil {
+		log.Fatalln("Cannot connect to PostgreSQL")
+	}
+	defer db.Disconnect()
+
 }
