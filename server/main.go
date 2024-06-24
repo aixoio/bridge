@@ -5,6 +5,7 @@ import (
 
 	"github.com/aixoio/bridge/server/db"
 	"github.com/aixoio/bridge/server/env"
+	"github.com/aixoio/bridge/server/router"
 )
 
 func main() {
@@ -18,5 +19,7 @@ func main() {
 		log.Panicln("Cannot connect to PostgreSQL")
 	}
 	defer db.Disconnect()
+
+	router.StartServer(dat)
 
 }
