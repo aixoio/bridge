@@ -35,3 +35,6 @@ CREATE TABLE transactions (
             REFERENCES users (id)
 );
 
+CREATE INDEX tx_id_idx ON transactions(id);
+CREATE INDEX tx_recipient_user_id_idx ON transactions(recipient_user_id);
+CREATE INDEX tx_sender_user_id_idx ON transactions(sender_user_id);
