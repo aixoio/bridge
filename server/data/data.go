@@ -18,4 +18,5 @@ type Transaction struct {
 	Is_mined          bool
 	Sent_at           time.Time
 	Tx_description    string
+	Value             int64
 }
