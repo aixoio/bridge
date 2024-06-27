@@ -30,6 +30,7 @@ CREATE TABLE transactions (
     is_mined BOOLEAN NOT NULL,
     sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     tx_description TEXT,
+    value BIGINT NOT NULL,
     CONSTRAINT fk_user_id
         FOREIGN KEY (recipient_user_id)
             REFERENCES users (id)
