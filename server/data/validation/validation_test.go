@@ -13,7 +13,7 @@ func TestUsernameIsValidValid(t *testing.T) {
 }
 
 func TestUsernameIsValidInvalid(t *testing.T) {
-	if !validation.UsernameIsValid("a-invalid-username-~!@#$%^&*()_+`-=[]\\;'\",./<>?") {
+	if validation.UsernameIsValid("a-invalid-username-~!@#$%^&*()_+`-=[]\\;'\",./<>?") {
 		t.Fail()
 	}
 }
