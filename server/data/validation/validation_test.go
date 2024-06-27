@@ -17,3 +17,19 @@ func TestUsernameIsValidInvalid(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestTransactionValueIsValidValid(t *testing.T) {
+	if !validation.TransactionValueIsValid(8) {
+		t.Fail()
+	}
+}
+
+func TestTransactionValueIsValidInvalid(t *testing.T) {
+	if validation.TransactionValueIsValid(-4) {
+		t.Fail()
+	}
+
+	if validation.TransactionValueIsValid(0) {
+		t.Fail()
+	}
+}
